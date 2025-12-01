@@ -32,7 +32,7 @@ const Projects = () => {
   const getDefaultProjects = () => [
     {
       _id: '1',
-      title: 'E-Commerce Platform',
+      title: 'E-Commerce',
       description: 'A full-stack e-commerce platform with user authentication, product management, shopping cart, and payment integration.',
       techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
