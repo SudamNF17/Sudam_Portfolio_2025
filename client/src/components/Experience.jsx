@@ -26,41 +26,30 @@ const Experience = () => {
   const getDefaultExperiences = () => [
     {
       _id: '1',
-      title: 'Bachelor of Science in Software Engineering',
-      company: 'University of Moratuwa',
+      title: 'Bachelor of Science Honours-information technolodgy specialized in Software Engineering',
+      company: 'SLIIT',
       type: 'Education',
       description: 'Pursuing undergraduate degree in Software Engineering with focus on full-stack development, software architecture, and modern web technologies.',
-      startDate: '2021-09-01',
+      startDate: '2023-09-21',
       current: true,
-      location: 'Moratuwa, Sri Lanka',
-    },
-    {
-      _id: '2',
-      title: 'Full Stack Developer Intern',
-      company: 'Tech Solutions Inc.',
-      type: 'Internship',
-      description: 'Developed and maintained web applications using React and Node.js. Collaborated with team members on agile projects and learned industry best practices.',
-      startDate: '2023-06-01',
-      endDate: '2023-12-31',
-      location: 'Colombo, Sri Lanka',
-    },
-    {
-      _id: '3',
-      title: 'AWS Certified Cloud Practitioner',
-      company: 'Amazon Web Services',
-      type: 'Certificate',
-      description: 'Certified in AWS cloud fundamentals including cloud concepts, security, architecture, pricing, and support.',
-      startDate: '2023-03-15',
-      certificateLink: 'https://www.credly.com/badges/aws-certified',
+      location: 'Malabe, Sri Lanka',
     },
     {
       _id: '4',
-      title: 'Meta Front-End Developer Certificate',
-      company: 'Meta (Coursera)',
+      title: 'Online learning programme in python certificate',
+      company: 'University of Moratuwa',
       type: 'Certificate',
-      description: 'Completed comprehensive front-end development program covering React, JavaScript, HTML, CSS, and responsive design principles.',
-      startDate: '2023-01-10',
-      certificateLink: 'https://www.coursera.org/certificates/meta-front-end-developer',
+      description: 'Successfully completed a beginner-level Python course, learning core programming concepts, syntax, and practical coding exercises to build foundational skills.',
+      startDate: '2023-04-20',
+      certificateLink: 'https://open.uom.lk/lms/mod/customcert/verify_certificate.php' ,
+    },
+    {
+      _id: '5',
+      title: 'Advanced Level Examination',
+      company: 'Loyola College Bopitiya',
+      type: 'Education',
+      description: 'Completed my secondary education in the Commerce stream, achieving strong grades in ICT, Account, Business Studies, and English (B, A, B, A). ',
+      startDate: '2020-01-20',
     },
   ];
 
@@ -168,6 +157,7 @@ const Experience = () => {
                           className="inline-block mt-4 text-neon-blue hover:text-neon-purple transition-colors"
                         >
                           View Certificate →
+                          certificateCode: 'ABC123XYZ'
                         </a>
                       )}
                     </div>
