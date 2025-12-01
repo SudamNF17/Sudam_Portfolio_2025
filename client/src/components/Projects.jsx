@@ -12,7 +12,12 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const response = await getProjects();
-        setProjects(response.data.data || []);
+        const apiProjects = response?.data?.data;
+        if (Array.isArray(apiProjects) && apiProjects.length > 0) {
+          setProjects(apiProjects);
+        } else {
+          setProjects(getDefaultProjects());
+        }
       } catch (error) {
         console.error('Error fetching projects:', error);
         // Fallback to default projects if API fails

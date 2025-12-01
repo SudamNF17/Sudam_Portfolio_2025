@@ -11,7 +11,12 @@ const Experience = () => {
     const fetchExperiences = async () => {
       try {
         const response = await getExperiences();
-        setExperiences(response.data.data || []);
+        const apiExperiences = response?.data?.data;
+        if (Array.isArray(apiExperiences) && apiExperiences.length > 0) {
+          setExperiences(apiExperiences);
+        } else {
+          setExperiences(getDefaultExperiences());
+        }
       } catch (error) {
         console.error('Error fetching experiences:', error);
         // Fallback to default experiences if API fails
