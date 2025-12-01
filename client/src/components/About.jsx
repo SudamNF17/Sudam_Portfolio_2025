@@ -62,7 +62,7 @@ const About = () => {
             <div className="glass rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-4 text-white">Who I Am</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                I'm an <span className="text-neon-blue font-semibold">Undergraduate Software Engineer</span> with a
+                I'm an <span className="text-neon-blue font-semibold">Undergraduate Software Engineering Student</span> with a
                 passion for creating innovative web solutions. Currently pursuing my degree while building
                 real-world projects that solve problems and deliver value.
               </p>
@@ -90,14 +90,18 @@ const About = () => {
               <div className="space-y-4">
                 <div className="border-l-2 border-neon-blue pl-4">
                   <h4 className="text-xl font-semibold text-white mb-1">
-                    Bachelor of Science in Software Engineering
+                    Bachelor of Science Honours-information technolodgy specialized in Software Engineering
                   </h4>
-                  <p className="text-neon-blue mb-2">University of Moratuwa</p>
-                  <p className="text-gray-400 text-sm">2021 - Present</p>
+                  <p className="text-neon-blue mb-2">Sri-lanka Institute of Information technology(SLIIT)</p>
+                  <p className="text-gray-400 text-sm">2024 - Present</p>
+
+                  
                 </div>
               </div>
             </div>
           </motion.div>
+
+          
         </div>
 
         <motion.div

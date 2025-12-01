@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import Typewriter from './Typewriter';
+import profileImg from '../images/sudam.jpeg';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,8 +19,8 @@ const Hero = () => {
   }, []);
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', color: 'hover:text-gray-400' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', color: 'hover:text-blue-400' },
+    { icon: FaGithub, href: 'https://github.com/SudamNF17', color: 'hover:text-gray-400' },
+    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudam-fernando-063171270', color: 'hover:text-blue-400' },
     { icon: FaEnvelope, href: 'mailto:sudam17fernando@gmail.com', color: 'hover:text-red-400' },
   ];
 
@@ -39,7 +40,8 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center">
+        <div className="grid gap-12 lg:grid-cols-[3fr_2fr] items-center">
+          <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +68,7 @@ const Hero = () => {
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-300 mb-4">
               <Typewriter
                 words={[
-                  'Undergraduate Software Engineer',
+                  'Undergraduate Software Engineering Student',
                   'Full Stack Developer',
                   'React Enthusiast',
                   'Problem Solver',
@@ -88,41 +90,65 @@ const Hero = () => {
             Passionate about clean code, user experience, and continuous learning.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex justify-center space-x-6 mb-16"
-          >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, y: -5 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex justify-center lg:justify-start space-x-6 mb-16"
+            >
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, y: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`p-4 rounded-full glass ${social.color} transition-colors`}
+                >
+                  <social.icon size={24} />
+                </motion.a>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="flex justify-center lg:justify-start"
+            >
+              <motion.button
+                onClick={scrollToAbout}
+                whileHover={{ scale: 1.1, y: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className={`p-4 rounded-full glass ${social.color} transition-colors`}
+                className="p-4 rounded-full glass hover:bg-white/20 transition-colors"
               >
-                <social.icon size={24} />
-              </motion.a>
-            ))}
-          </motion.div>
+                <FaArrowDown className="text-neon-blue animate-bounce" size={24} />
+              </motion.button>
+            </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.6 }}
+            className="relative flex justify-center"
           >
-            <motion.button
-              onClick={scrollToAbout}
-              whileHover={{ scale: 1.1, y: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-4 rounded-full glass hover:bg-white/20 transition-colors"
-            >
-              <FaArrowDown className="text-neon-blue animate-bounce" size={24} />
-            </motion.button>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <div className="absolute -inset-1 rounded-[30px] bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-80 blur-2xl animate-pulse" />
+              <div className="relative h-full w-full rounded-[30px] overflow-hidden border border-white/20 bg-white/5 backdrop-blur-lg shadow-2xl">
+                <img
+                  src={profileImg}
+                  alt="Sudam Navoda Fernando"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-sm uppercase tracking-[0.3em] text-gray-300">Undergraduate Software Engineering Student</p>
+                  <p className="text-lg font-semibold text-white">Sudam Navoda Fernando</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
