@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaDownload } from 'react-icons/fa';
 import Typewriter from './Typewriter';
 import profileImg from '../images/sudam.jpeg';
 
@@ -94,7 +94,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex justify-center lg:justify-start space-x-6 mb-16"
+              className="flex justify-center lg:justify-start space-x-6 mb-8"
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -109,6 +109,24 @@ const Hero = () => {
                   <social.icon size={24} />
                 </motion.a>
               ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex justify-center lg:justify-start mb-8"
+            >
+              <motion.a
+                href="/cv.pdf"
+                download="Sudam_Navoda_Fernando_CV.pdf"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-neon-blue/50 transition-all"
+              >
+                <FaDownload size={18} />
+                <span>Download CV</span>
+              </motion.a>
             </motion.div>
 
             <motion.div
