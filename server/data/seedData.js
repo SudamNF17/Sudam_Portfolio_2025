@@ -62,22 +62,35 @@ export const projects = [
 ];
 
 export const skills = [
+  // Programming Languages
+  { name: 'JavaScript', category: 'Programming Languages', proficiency: 95 },
+  { name: 'Python', category: 'Programming Languages', proficiency: 80 },
+  { name: 'Java', category: 'Programming Languages', proficiency: 75 },
+  { name: 'C', category: 'Programming Languages', proficiency: 70 },
+  { name: 'C++', category: 'Programming Languages', proficiency: 70 },
+
+  // Frontend
   { name: 'React', category: 'Frontend', proficiency: 90 },
-  { name: 'JavaScript', category: 'Frontend', proficiency: 95 },
-  { name: 'TypeScript', category: 'Frontend', proficiency: 85 },
   { name: 'HTML5', category: 'Frontend', proficiency: 95 },
   { name: 'CSS3', category: 'Frontend', proficiency: 90 },
   { name: 'Tailwind CSS', category: 'Frontend', proficiency: 92 },
+
+  // Backend
   { name: 'Node.js', category: 'Backend', proficiency: 88 },
   { name: 'Express.js', category: 'Backend', proficiency: 85 },
-  { name: 'Python', category: 'Backend', proficiency: 80 },
+  { name: 'PHP', category: 'Backend', proficiency: 75 },
+
+  // Database
   { name: 'MongoDB', category: 'Database', proficiency: 85 },
-  { name: 'PostgreSQL', category: 'Database', proficiency: 80 },
   { name: 'MySQL', category: 'Database', proficiency: 75 },
+  { name: 'SQL Server', category: 'Database', proficiency: 70 },
+
+  // Tools
   { name: 'Git', category: 'Tools', proficiency: 90 },
-  { name: 'Docker', category: 'Tools', proficiency: 75 },
-  { name: 'AWS', category: 'Tools', proficiency: 70 },
-  { name: 'Figma', category: 'Tools', proficiency: 80 },
+  { name: 'Figma', category: 'Tools', proficiency: 90 },
+  { name: 'VS Code', category: 'Tools', proficiency: 95 },
+  { name: 'Eclipse', category: 'Tools', proficiency: 80 },
+  { name: 'Postman', category: 'Tools', proficiency: 90 },
 ];
 
 export const experiences = [
