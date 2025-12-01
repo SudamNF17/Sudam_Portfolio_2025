@@ -28,7 +28,12 @@ const Skills = () => {
     const fetchSkills = async () => {
       try {
         const response = await getSkills();
-        setSkills(response.data.data || []);
+        const apiSkills = response?.data?.data;
+        if (Array.isArray(apiSkills) && apiSkills.length > 0) {
+          setSkills(apiSkills);
+        } else {
+          setSkills(getDefaultSkills());
+        }
       } catch (error) {
         console.error('Error fetching skills:', error);
         // Fallback to default skills if API fails
