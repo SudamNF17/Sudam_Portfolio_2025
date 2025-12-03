@@ -1,64 +1,23 @@
 export const projects = [
   {
-    title: 'E-Commerce',
-    description:
-      'A full-stack e-commerce platform with user authentication, product management, shopping cart, and payment integration. Built with modern technologies for optimal performance and user experience.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
-    githubLink: 'https://github.com/sudam17/ecommerce-platform',
-    demoLink: 'https://ecommerce-demo.vercel.app',
-    featured: true,
+      title: 'My Portfolio Website',
+      description: 'A personal portfolio website built to showcase my projects, skills, experience, and achievements. Features responsive design, smooth animations, and a clean modern UI.',
+      techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: 'portfolio.png',
+      githubLink: 'https://github.com/SudamNF17/Sudam_Portfolio_2025.git',
+      demoLink: '#',
+      featured: true,
   },
   {
-    title: 'Task Management App',
-    description:
-      'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Helps teams stay organized and productive.',
-    techStack: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
-    githubLink: 'https://github.com/sudam17/task-manager',
-    demoLink: 'https://taskmanager-demo.vercel.app',
-    featured: true,
+    title: 'Tea Factory Management System',
+      description: 'A complete MERN-stack system designed for managing tea factory operations, including supplier management, employee management, attendance tracking, inventory handling, and sales processing. Features role-based dashboards for HR Manager, Supplier, and Wholesaler.',
+      techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      image: 'tea-factory.png',
+      githubLink: 'https://github.com/SudamNF17/FerndaleTeaFactorySystem.git',
+      demoLink: '#',
+      featured: true,
   },
-  {
-    title: 'Weather Dashboard',
-    description:
-      'A beautiful weather dashboard that displays current weather conditions, forecasts, and weather maps. Features location-based weather data and interactive charts.',
-    techStack: ['React', 'Chart.js', 'OpenWeatherMap API', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800',
-    githubLink: 'https://github.com/sudam17/weather-dashboard',
-    demoLink: 'https://weather-demo.vercel.app',
-    featured: false,
-  },
-  {
-    title: 'Social Media Analytics',
-    description:
-      'An analytics dashboard for social media metrics with data visualization, trend analysis, and reporting features. Helps businesses track their social media performance.',
-    techStack: ['React', 'D3.js', 'Node.js', 'PostgreSQL', 'Express'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-    githubLink: 'https://github.com/sudam17/social-analytics',
-    demoLink: 'https://analytics-demo.vercel.app',
-    featured: true,
-  },
-  {
-    title: 'Recipe Finder App',
-    description:
-      'A recipe discovery application with search functionality, ingredient-based filtering, and detailed cooking instructions. Includes meal planning and shopping list features.',
-    techStack: ['React', 'Spoonacular API', 'Redux', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800',
-    githubLink: 'https://github.com/sudam17/recipe-finder',
-    demoLink: 'https://recipe-demo.vercel.app',
-    featured: false,
-  },
-  {
-    title: 'Chat Application',
-    description:
-      'A real-time chat application with multiple rooms, file sharing, and emoji support. Built with WebSocket technology for instant messaging capabilities.',
-    techStack: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'Express'],
-    image: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800',
-    githubLink: 'https://github.com/sudam17/chat-app',
-    demoLink: 'https://chat-demo.vercel.app',
-    featured: true,
-  },
+  
 ];
 
 export const skills = [

@@ -2,11 +2,15 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getProjects } from '../utils/api';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import teaFactoryImg from '../images/tea-factory.png';
+import portfolioImg from '../images/portfolio.png';
+
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAvailableSoon, setShowAvailableSoon] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -32,65 +36,55 @@ const Projects = () => {
   const getDefaultProjects = () => [
     {
       _id: '1',
-      title: 'E-Commerce',
-      description: 'A full-stack e-commerce platform with user authentication, product management, shopping cart, and payment integration.',
-      techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
-      githubLink: 'https://github.com/sudam17/ecommerce-platform',
-      demoLink: 'https://ecommerce-demo.vercel.app',
+      title: 'My Portfolio Website',
+      description: 'A personal portfolio website built to showcase my projects, skills, experience, and achievements. Features responsive design, smooth animations, and a clean modern UI.',
+      techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: portfolioImg,
+      githubLink: 'https://github.com/SudamNF17/Sudam_Portfolio_2025.git',
+      demoLink: '#',
       featured: true,
     },
     {
       _id: '2',
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      techStack: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
-      githubLink: 'https://github.com/sudam17/task-manager',
-      demoLink: 'https://taskmanager-demo.vercel.app',
+      title: 'Tea Factory Management System',
+      description: 'A complete MERN-stack system designed for managing tea factory operations, including supplier management, employee management, attendance tracking, inventory handling, and sales processing. Features role-based dashboards for HR Manager, Supplier, and Wholesaler.',
+      techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      image: teaFactoryImg,
+      githubLink: 'https://github.com/SudamNF17/FerndaleTeaFactorySystem.git',
+      demoLink: '#',
       featured: true,
     },
-    {
-      _id: '3',
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard that displays current weather conditions, forecasts, and weather maps.',
-      techStack: ['React', 'Chart.js', 'OpenWeatherMap API', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800',
-      githubLink: 'https://github.com/sudam17/weather-dashboard',
-      demoLink: 'https://weather-demo.vercel.app',
-      featured: false,
-    },
-    {
-      _id: '4',
-      title: 'Social Media Analytics',
-      description: 'An analytics dashboard for social media metrics with data visualization, trend analysis, and reporting features.',
-      techStack: ['React', 'D3.js', 'Node.js', 'PostgreSQL', 'Express'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-      githubLink: 'https://github.com/sudam17/social-analytics',
-      demoLink: 'https://analytics-demo.vercel.app',
-      featured: true,
-    },
-    {
-      _id: '5',
-      title: 'Recipe Finder App',
-      description: 'A recipe discovery application with search functionality, ingredient-based filtering, and detailed cooking instructions.',
-      techStack: ['React', 'Spoonacular API', 'Redux', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800',
-      githubLink: 'https://github.com/sudam17/recipe-finder',
-      demoLink: 'https://recipe-demo.vercel.app',
-      featured: false,
-    },
-    {
-      _id: '6',
-      title: 'Chat Application',
-      description: 'A real-time chat application with multiple rooms, file sharing, and emoji support.',
-      techStack: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'Express'],
-      image: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800',
-      githubLink: 'https://github.com/sudam17/chat-app',
-      demoLink: 'https://chat-demo.vercel.app',
-      featured: true,
-    },
+  
   ];
+
+  // Helper function to get image source
+  const getImageSrc = (image) => {
+    if (typeof image === 'string') {
+      // If it's a string from API, check if it matches our local images
+      if (image === 'portfolio.png') {
+        return portfolioImg;
+      }
+      if (image === 'tea-factory.png' || image === 'teaFactoryImg') {
+        return teaFactoryImg;
+      }
+      // Return as is if it's a URL or other path
+      return image;
+    }
+    // If it's already an imported image, return it
+    return image;
+  };
+
+  // Handle demo link click - show "Available Soon" for Tea Factory project
+  const handleDemoClick = (e, project) => {
+    e.stopPropagation();
+    if (project.title === 'Tea Factory Management System' || project.title?.includes('Tea Factory')) {
+      e.preventDefault();
+      setShowAvailableSoon(true);
+      setTimeout(() => {
+        setShowAvailableSoon(false);
+      }, 3000);
+    }
+  };
 
   if (loading) {
     return (
@@ -132,7 +126,7 @@ const Projects = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={getImageSrc(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
@@ -179,7 +173,7 @@ const Projects = () => {
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => handleDemoClick(e, project)}
                       className="flex items-center space-x-2 text-gray-400 hover:text-neon-purple transition-colors"
                     >
                       <FaExternalLinkAlt size={18} />
@@ -212,7 +206,7 @@ const Projects = () => {
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={selectedProject.image}
+                  src={getImageSrc(selectedProject.image)}
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
@@ -256,6 +250,7 @@ const Projects = () => {
                       href={selectedProject.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => handleDemoClick(e, selectedProject)}
                       className="flex items-center space-x-2 px-6 py-3 glass hover:bg-white/20 transition-colors rounded-lg"
                     >
                       <FaExternalLinkAlt size={20} />
@@ -265,6 +260,27 @@ const Projects = () => {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Available Soon Notification */}
+      <AnimatePresence>
+        {showAvailableSoon && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.8 }}
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
+          >
+            <div className="glass-dark px-8 py-4 rounded-xl shadow-2xl border border-neon-purple/30">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-neon-purple rounded-full animate-pulse"></div>
+                <p className="text-white font-semibold text-lg">
+                  Available Soon
+                </p>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
