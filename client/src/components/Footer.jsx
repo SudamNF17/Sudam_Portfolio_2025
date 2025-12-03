@@ -16,10 +16,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-gray-400 text-center md:text-left">
             <p>
-              © {currentYear} <span className="text-neon-blue font-semibold">Sudam Navoda Fernando</span>. All rights reserved.
+              Copyright © {currentYear} - <span className="text-neon-blue font-semibold"></span>All rights reserved by Sudam Navoda Fernando.
             </p>
             <p className="text-sm mt-1 flex items-center justify-center md:justify-start">
-              Made with <FaHeart className="text-red-500 mx-1" size={14} /> using React & Node.js
+              
             </p>
           </div>
 
