@@ -118,7 +118,7 @@ const Hero = () => {
               className="flex justify-center lg:justify-start mb-8"
             >
               <motion.a
-                href="/cv.pdf"
+                href="/Sudam Fernando CV.pdf"
                 download="Sudam_Navoda_Fernando_CV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
