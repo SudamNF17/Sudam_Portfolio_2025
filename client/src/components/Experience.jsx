@@ -46,7 +46,7 @@ const Experience = () => {
       type: 'Certificate',
       description: 'Successfully completed a beginner-level Python course, learning core programming concepts, syntax, and practical coding exercises to build foundational skills.',
       startDate: '2023-04-20',
-      certificateLink: 'https://open.uom.lk/lms/mod/customcert/verify_certificate.php' ,
+      certificateLink: '/Python_for_Beginners_E-Certificate.pdf',
     },
     {
       _id: '5',
@@ -162,7 +162,6 @@ const Experience = () => {
                           className="inline-block mt-4 text-neon-blue hover:text-neon-purple transition-colors"
                         >
                           View Certificate →
-                          certificateCode: 'ABC123XYZ'
                         </a>
                       )}
                     </div>

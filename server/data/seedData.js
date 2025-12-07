@@ -68,7 +68,7 @@ export const experiences = [
       type: 'Certificate',
       description: 'Successfully completed a beginner-level Python course, learning core programming concepts, syntax, and practical coding exercises to build foundational skills.',
       startDate: '2023-04-20',
-      certificateLink: 'https://open.uom.lk/lms/mod/customcert/verify_certificate.php' ,
+      certificateLink: '/Python_for_Beginners_E-Certificate.pdf' ,
     },
     {
       title: 'Advanced Level Examination',
