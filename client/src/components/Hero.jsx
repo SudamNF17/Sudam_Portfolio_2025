@@ -20,7 +20,7 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/SudamNF17', color: 'hover:text-gray-400' },
-    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudam-fernando-063171270', color: 'hover:text-blue-400' },
+    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudamfernando', color: 'hover:text-blue-400' },
     { icon: FaEnvelope, href: 'mailto:sudam17fernando@gmail.com', color: 'hover:text-red-400' },
   ];
 
@@ -118,7 +118,7 @@ const Hero = () => {
               className="flex justify-center lg:justify-start mb-8"
             >
               <motion.a
-                href="/Sudam Fernando CV.pdf"
+                href="/SudamFernando CV.pdf"
                 download="Sudam_Navoda_Fernando_CV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
