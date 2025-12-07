@@ -33,9 +33,20 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error('Contact form error:', error);
+      let errorMessage = 'Failed to send message. Please try again.';
+      
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
+      } else if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
+        errorMessage = 'Unable to connect to server. Please check your internet connection and try again later.';
+      }
+      
       setStatus({
         type: 'error',
-        message: error.response?.data?.message || 'Failed to send message. Please try again.',
+        message: errorMessage,
       });
     } finally {
       setLoading(false);

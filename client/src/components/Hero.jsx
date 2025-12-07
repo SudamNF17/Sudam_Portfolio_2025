@@ -20,7 +20,7 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/SudamNF17', color: 'hover:text-gray-400' },
-    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudamfernando', color: 'hover:text-blue-400' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sudamfernando', color: 'hover:text-blue-400' },
     { icon: FaEnvelope, href: 'mailto:sudam17fernando@gmail.com', color: 'hover:text-red-400' },
   ];
 
