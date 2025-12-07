@@ -6,7 +6,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/SudamNF17', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudam-fernando-063171270', label: 'LinkedIn' },
+    { icon: FaLinkedin, href: 'www.linkedin.com/in/sudamfernando', label: 'LinkedIn' },
     { icon: FaEnvelope, href: 'mailto:sudam17fernando@gmail.com', label: 'Email' },
   ];
 
