@@ -11,6 +11,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import Snow from './components/Snow';
 import ThemeContext from './context/ThemeContext';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <Router>
         <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+          <Snow />
           <Navbar />
           <Hero />
           <About />
