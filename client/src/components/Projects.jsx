@@ -4,6 +4,7 @@ import { getProjects } from '../utils/api';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import teaFactoryImg from '../images/tea-factory.png';
 import portfolioImg from '../images/portfolio.png';
+import GpavisionImg from '../images/GPAVision.png';
 
 
 const Projects = () => {
@@ -42,7 +43,7 @@ const Projects = () => {
       image: portfolioImg,
       githubLink: 'https://github.com/SudamNF17/Sudam_Portfolio_2025.git',
       demoLink: '#',
-      featured: true,
+      featured: false,
     },
     {
       _id: '2',
@@ -52,7 +53,17 @@ const Projects = () => {
       image: teaFactoryImg,
       githubLink: 'https://github.com/SudamNF17/FerndaleTeaFactorySystem.git',
       demoLink: '#',
-      featured: true,
+      featured: false,
+    },
+    {
+      _id: '3',
+      title: 'GPA Vision web application',
+      description: 'GPA Vision is a smart web application that automatically calculates student GPAs by extracting results from PDF files 📄.It provides clear analytics, charts, and rankings to help track academic performance easily 📊.',
+      techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB', 'PHP (RESTful APIs) + Python (Flask for PDF processing)','MySQL (MariaDB) with XAMPP (Apache)'],
+      image: GpavisionImg,
+      githubLink: 'https://github.com/SudamNF17/GPA-Vision.git',
+      demoLink: '#',
+      featured: false,
     },
   
   ];
@@ -67,6 +78,9 @@ const Projects = () => {
       if (image === 'tea-factory.png' || image === 'teaFactoryImg') {
         return teaFactoryImg;
       }
+      if (image === 'GPAVision.png' || image === 'gpavision.png' || image.toLowerCase().includes('gpavision')) {
+        return GpavisionImg;
+      }
       // Return as is if it's a URL or other path
       return image;
     }
@@ -74,10 +88,13 @@ const Projects = () => {
     return image;
   };
 
-  // Handle demo link click - show "Available Soon" for Tea Factory project
+  // Handle demo link click - show "Available Soon" for Tea Factory and GPA Vision projects
   const handleDemoClick = (e, project) => {
     e.stopPropagation();
-    if (project.title === 'Tea Factory Management System' || project.title?.includes('Tea Factory')) {
+    const isTeaFactory = project.title === 'Tea Factory Management System' || project.title?.includes('Tea Factory');
+    const isGpaVision = project.title === 'GPA Vision web application' || project.title?.includes('GPA Vision') || project.title?.includes('Gpa Vision');
+    
+    if (isTeaFactory || isGpaVision) {
       e.preventDefault();
       setShowAvailableSoon(true);
       setTimeout(() => {
