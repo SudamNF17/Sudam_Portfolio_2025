@@ -71,6 +71,30 @@ export const experiences = [
       certificateLink: '/Python_for_Beginners_E-Certificate.pdf' ,
     },
     {
+      title: 'Cybersecurity Best Practices certificate',
+      company: 'Coursera',
+      type: 'Certificate',
+      description: 'Cybersecurity Best Practices" is a transformative course designed for any learners whether they are just getting started with cybersecurity or are seasoned professionals looking for a refresher. This course uses real world examples and explains cybersecurity concepts in relatable ways to make it accessible for anyone while still challenging seasoned professionals to think of these concepts with a different lens.',
+      startDate: '2025-12-11',
+      certificateLink: '/Cyber_secuirity_best_practices_coursera.pdf'
+    },
+    {
+      title: 'GenAI for Cybersecurity Analysts',
+      company: 'Coursera',
+      type: 'Certificate',
+      description: 'This course explores how Generative Artificial Intelligence (GenAI) is revolutionizing cybersecurity. Through a blend of discussions, video demos, and guided hands-on activities, you will learn how to leverage GenAI tools to enhance your productivity in threat detection, risk mitigation, security testing, and more.',
+      startDate: '2025-12-14',
+      certificateLink: '/gen_ai_for_cyber_secuirity.pdf'
+    },
+    {
+      title: 'Exploring Emerging Technologies for Lifelong Learning and Success',
+      company: ' State University of New York and offered through Coursera',
+      type: 'Certificate',
+      description: 'Including value and implications of using established and emerging technology tools for personal and professional growth.',
+      startDate: '2023-11-1',
+      certificateLink: '/lifelong_learning_and_success.pdf'
+    },
+    {
       title: 'Advanced Level Examination',
       company: 'Loyola College Bopitiya',
       type: 'Education',
