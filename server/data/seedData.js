@@ -6,7 +6,7 @@ export const projects = [
       image: 'portfolio.png',
       githubLink: 'https://github.com/SudamNF17/Sudam_Portfolio_2025.git',
       demoLink: '#',
-      featured: true,
+      featured: false,
   },
   {
     title: 'Tea Factory Management System',
@@ -15,8 +15,17 @@ export const projects = [
       image: 'tea-factory.png',
       githubLink: 'https://github.com/SudamNF17/FerndaleTeaFactorySystem.git',
       demoLink: '#',
-      featured: true,
+      featured: false,
   },
+  {
+        title: 'GPA Vision web application',
+        description: 'GPA Vision is a smart web application that automatically calculates student GPAs by extracting results from PDF files 📄.It provides clear analytics, charts, and rankings to help track academic performance easily 📊.',
+        techStack: ['HTML5', 'CSS3', 'JavaScript', 'MongoDB', 'PHP (RESTful APIs) + Python (Flask for PDF processing)','MySQL (MariaDB) with XAMPP (Apache)'],
+        image: 'GPAVision.png',
+        githubLink: 'https://github.com/SudamNF17/GPA-Vision.git',
+        demoLink: '#',
+      featured: false,
+ },
   
 ];
 
