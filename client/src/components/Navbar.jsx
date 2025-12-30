@@ -48,45 +48,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold relative inline-flex items-center px-2"
+            className="text-2xl font-bold text-gradient"
           >
-            {/* Christmas Tree in front of logo */}
-            <motion.span
-              className="mr-2 text-green-500"
-              style={{ fontSize: '0.7em' }}
-              animate={{
-                rotate: [0, 5, -5, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            >
-              🎄
-            </motion.span>
-            {/* Logo Text - Clear and visible */}
-            <span className="text-gradient relative z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              SN<span className="text-neon-blue">F</span>
-            </span>
-            {/* Christmas Tree behind logo */}
-            <motion.span
-              className="ml-2 text-green-500"
-              style={{ fontSize: '0.7em' }}
-              animate={{
-                rotate: [0, -5, 5, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: 0.5,
-              }}
-            >
-              🎄
-            </motion.span>
+            SN<span className="text-neon-blue">F</span>
           </motion.div>
 
           {/* Desktop Menu */}
