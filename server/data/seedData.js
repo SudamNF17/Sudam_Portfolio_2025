@@ -26,6 +26,15 @@ export const projects = [
         demoLink: '#',
       featured: false,
  },
+ {
+       title: 'E-Commerce Cake Shop App',
+       description: 'A full-stack e-commerce cake shop app for customers to browse, order, and manage cake purchases, and for admins to manage products, orders, and users.',
+       techStack: ['React', 'Express', 'Node.js', 'MongoDB', 'REST API architecture'],
+       image: 'cakeshopimg.png',
+       githubLink: 'https://github.com/SudamNF17/cake-shop-web-app.git',
+       demoLink: '#',
+       featured: false,
+     },
   
 ];
 

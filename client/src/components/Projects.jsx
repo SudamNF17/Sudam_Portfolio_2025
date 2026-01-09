@@ -5,6 +5,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import teaFactoryImg from '../images/tea-factory.png';
 import portfolioImg from '../images/portfolio.png';
 import GpavisionImg from '../images/GPAVision.png';
+import CakeshopImg from '../images/cakeshopimg.png';
 
 
 const Projects = () => {
@@ -65,6 +66,16 @@ const Projects = () => {
       demoLink: '#',
       featured: false,
     },
+    {
+      _id: '4',
+      title: 'E-Commerce Cake Shop App',
+      description: 'A full-stack e-commerce cake shop app for customers to browse, order, and manage cake purchases, and for admins to manage products, orders, and users.',
+      techStack: ['React', 'Express', 'Node.js', 'MongoDB', 'REST API architecture'],
+      image: CakeshopImg,
+      githubLink: 'https://github.com/SudamNF17/cake-shop-web-app.git',
+      demoLink: '#',
+      featured: false,
+    },
   
   ];
 
@@ -80,6 +91,9 @@ const Projects = () => {
       }
       if (image === 'GPAVision.png' || image === 'gpavision.png' || image.toLowerCase().includes('gpavision')) {
         return GpavisionImg;
+      }
+      if (image === 'cakeshopimg.png' || image === 'cakeshop.png' || image.toLowerCase().includes('cakeshop') || image.toLowerCase().includes('cake')) {
+        return CakeshopImg;
       }
       // Return as is if it's a URL or other path
       return image;
