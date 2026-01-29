@@ -6,6 +6,7 @@ import teaFactoryImg from '../images/tea-factory.png';
 import portfolioImg from '../images/portfolio.png';
 import GpavisionImg from '../images/GPAVision.png';
 import CakeshopImg from '../images/cakeshopimg.png';
+import CurrencyImg from '../images/currencyConverter.png';
 
 
 const Projects = () => {
@@ -76,6 +77,16 @@ const Projects = () => {
       demoLink: '#',
       featured: false,
     },
+    {
+      _id: '5',
+      title: 'Live currrency rates Converter',
+      description: 'A Live Currency Rate Converter is a tool that shows real-time exchange rates between different currencies. It allows users to convert one currency to another instantly using the latest market rates, helping with travel planning, online shopping, business transactions, and financial analysis',
+      techStack: ['React', 'Express', 'Node.js', 'MongoDB', 'REST API architecture'],
+      image: CurrencyImg,
+      githubLink: 'https://github.com/SudamNF17/currency_converter.git',
+      demoLink: '#',
+      featured: false,
+    },
   
   ];
 
@@ -95,6 +106,9 @@ const Projects = () => {
       if (image === 'cakeshopimg.png' || image === 'cakeshop.png' || image.toLowerCase().includes('cakeshop') || image.toLowerCase().includes('cake')) {
         return CakeshopImg;
       }
+      if (image === 'currencyConverter.png' || image === 'currency.png' || image.toLowerCase().includes('currency')) {
+        return CurrencyImg;
+      }
       // Return as is if it's a URL or other path
       return image;
     }
@@ -107,8 +121,10 @@ const Projects = () => {
     e.stopPropagation();
     const isTeaFactory = project.title === 'Tea Factory Management System' || project.title?.includes('Tea Factory');
     const isGpaVision = project.title === 'GPA Vision web application' || project.title?.includes('GPA Vision') || project.title?.includes('Gpa Vision');
+    const isCurrencyConverter = project.title === 'Live currrency rates Converter' || project.title?.includes('Currency Converter');
+    const isCakeShop = project.title === 'E-Commerce Cake Shop App' || project.title?.includes('Cake Shop');
     
-    if (isTeaFactory || isGpaVision) {
+    if (isTeaFactory || isGpaVision || isCurrencyConverter || isCakeShop) {
       e.preventDefault();
       setShowAvailableSoon(true);
       setTimeout(() => {

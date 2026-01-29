@@ -34,7 +34,16 @@ export const projects = [
        githubLink: 'https://github.com/SudamNF17/cake-shop-web-app.git',
        demoLink: '#',
        featured: false,
-     },
+  },
+  {
+      title: 'Live currrency rates Converter',
+          description: 'A Live Currency Rate Converter is a tool that shows real-time exchange rates between different currencies. It allows users to convert one currency to another instantly using the latest market rates, helping with travel planning, online shopping, business transactions, and financial analysis',
+          techStack: ['React', 'Express', 'Node.js', 'MongoDB', 'REST API architecture'],
+          image: 'CurrencyImg',
+          githubLink: 'https://github.com/SudamNF17/currency_converter.git',
+          demoLink: '#',
+          featured: false,
+  }
   
 ];
 
@@ -116,7 +125,7 @@ export const experiences = [
       title: 'Advanced Level Examination',
       company: 'Loyola College Bopitiya',
       type: 'Education',
-      description: 'Completed my secondary education in the Commerce stream, achieving strong grades in ICT, Account, Business Studies, and English (B, A, B, A). ',
+      description: 'Completed my secondary education in the Commerce stream, achieving strong grades in ICT, Account, Business Studies, and English (B, A, A, B). ',
       startDate: '2020-01-20',
     },
 ];
