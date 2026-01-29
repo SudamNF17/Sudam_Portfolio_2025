@@ -118,7 +118,7 @@ const Experience = () => {
       title: 'Advanced Level Examination',
       company: 'Loyola College Bopitiya',
       type: 'Education',
-      description: 'Completed my secondary education in the Commerce stream, achieving strong grades in ICT, Account, Business Studies, and English (B, A, B, A). ',
+      description: 'Completed my secondary education in the Commerce stream, achieving strong grades in ICT, Account, Business Studies, and English (B, A, A, B). ',
       startDate: '2020-01-20',
     },
   ];
