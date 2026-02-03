@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
-import ThemeContext from '../context/ThemeContext';
-import { useContext } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { darkMode, setDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,33 +67,10 @@ const Navbar = () => {
                 {item.name}
               </motion.a>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: 180 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full glass hover:bg-white/20 transition-colors"
-            >
-              {darkMode ? (
-                <FaSun className="text-yellow-400" size={20} />
-              ) : (
-                <FaMoon className="text-blue-400" size={20} />
-              )}
-            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full glass"
-            >
-              {darkMode ? (
-                <FaSun className="text-yellow-400" size={18} />
-              ) : (
-                <FaMoon className="text-blue-400" size={18} />
-              )}
-            </motion.button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-full glass"
