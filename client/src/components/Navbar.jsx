@@ -37,21 +37,21 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-dark shadow-lg py-3'
+          ? 'border-b border-white/10 bg-[#080a12]/80 py-3 backdrop-blur-xl shadow-lg shadow-black/10'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient"
+            className="font-mono text-lg font-bold tracking-[.18em] text-gradient"
           >
-            SN<span className="text-neon-blue">F</span>
+            SNF<span className="text-cyan-300">.</span>
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/[.035] p-1.5">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
@@ -60,9 +60,9 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-neon-blue transition-colors cursor-pointer"
+                className="rounded-full px-3 py-1.5 text-sm text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-300 cursor-pointer"
               >
                 {item.name}
               </motion.a>
@@ -73,7 +73,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-full glass"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMobileMenuOpen}
+              className="rounded-lg border border-white/15 bg-white/5 p-2.5 text-white"
             >
               {isMobileMenuOpen ? (
                 <FaTimes className="text-white" size={20} />
@@ -90,7 +92,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 pb-4 space-y-3"
+            className="surface md:hidden mt-4 rounded-2xl p-3 space-y-1"
           >
             {navItems.map((item) => (
               <a
@@ -100,7 +102,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="block text-gray-300 hover:text-neon-blue transition-colors py-2"
+                className="block rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/10 hover:text-cyan-300 transition-colors"
               >
                 {item.name}
               </a>
