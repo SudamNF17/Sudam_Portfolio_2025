@@ -54,20 +54,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="section-shell relative">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Get In Touch</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full mb-4" />
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="eyebrow">Let’s connect</p>
+          <h2 className="section-title">Have an idea in mind?</h2>
+          <p className="section-copy">
             Have a project in mind or want to collaborate? Feel free to reach out!
           </p>
         </motion.div>
@@ -78,7 +76,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass rounded-2xl p-8"
+            className="surface rounded-3xl p-6 md:p-8"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -93,7 +91,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                     placeholder="Your Name"
                   />
                 </div>
@@ -108,7 +106,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -125,7 +123,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                   placeholder="What's this about?"
                 />
               </div>
@@ -141,7 +139,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white resize-none"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>
@@ -176,7 +174,7 @@ const Contact = () => {
                 disabled={loading}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-neon-blue/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="button-primary w-full py-4 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? (
                   <>
@@ -200,7 +198,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-8 text-center"
           >
-            <p className="text-gray-400 mb-4">Or reach me directly at:</p>
+            <p className="mb-3 text-slate-400">Or reach me directly at:</p>
             <a
               href="mailto:sudam17fernando@gmail.com"
               className="text-neon-blue hover:text-neon-purple transition-colors text-lg font-semibold"

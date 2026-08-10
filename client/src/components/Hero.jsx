@@ -29,9 +29,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900" />
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,#080a12_5%,#0c1222_48%,#080a12_100%)]" />
+      <div className="absolute inset-0 opacity-[.14] [background-image:linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] [background-size:4rem_4rem]" />
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -39,17 +40,18 @@ const Hero = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid gap-12 lg:grid-cols-[3fr_2fr] items-center">
+      <div className="site-container relative z-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
           <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
+            className="mb-5"
           >
+            <p className="eyebrow">Software engineering student · Sri Lanka</p>
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-4"
+              className="mb-4 text-5xl font-extrabold leading-[.98] tracking-tight md:text-7xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -63,9 +65,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-8"
+            className="mb-6"
           >
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-300 mb-4">
+            <h2 className="text-xl font-semibold text-slate-300 md:text-3xl">
               <Typewriter
                 words={[
                   'Undergraduate Software Engineering Student',
@@ -84,7 +86,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12"
+            className="max-w-xl text-base leading-8 text-slate-400 md:text-lg lg:mx-0 mb-9"
           >
             Crafting beautiful and functional web experiences with modern technologies.
             Passionate about clean code, user experience, and continuous learning.
@@ -94,7 +96,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex justify-center lg:justify-start space-x-6 mb-8"
+              className="flex justify-center lg:justify-start gap-3 mb-8"
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -104,7 +106,8 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`p-4 rounded-full glass ${social.color} transition-colors`}
+                  aria-label="Social profile"
+                  className={`surface rounded-xl p-3.5 ${social.color} surface-hover transition-colors`}
                 >
                   <social.icon size={24} />
                 </motion.a>
@@ -122,7 +125,7 @@ const Hero = () => {
                 download="Sudam_Navoda_Fernando_CV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-neon-blue/50 transition-all"
+                className="button-primary"
               >
                 <FaDownload size={18} />
                 <span>Download CV</span>
@@ -139,7 +142,8 @@ const Hero = () => {
                 onClick={scrollToAbout}
                 whileHover={{ scale: 1.1, y: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-4 rounded-full glass hover:bg-white/20 transition-colors"
+                aria-label="Scroll to about section"
+                className="rounded-xl border border-white/10 bg-white/5 p-3.5 transition-colors hover:bg-white/10"
               >
                 <FaArrowDown className="text-neon-blue animate-bounce" size={24} />
               </motion.button>
@@ -152,9 +156,9 @@ const Hero = () => {
             transition={{ duration: 0.9, delay: 0.6 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-[25rem] lg:w-[25rem]">
               <div className="absolute -inset-1 rounded-[30px] bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-80 blur-2xl animate-pulse" />
-              <div className="relative h-full w-full rounded-[30px] overflow-hidden border border-white/20 bg-white/5 backdrop-blur-lg shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 shadow-2xl shadow-black/40">
                 <img
                   src={profileImg}
                   alt="Sudam Navoda Fernando"
@@ -162,7 +166,7 @@ const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-sm uppercase tracking-[0.3em] text-gray-300">Undergraduate Software Engineering Student</p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-300">Undergraduate software engineer</p>
                   <p className="text-lg font-semibold text-white">Sudam Navoda Fernando</p>
                 </div>
               </div>

@@ -1,56 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-gray-200 dark:border-gray-800;
-  }
+  html { scroll-behavior: smooth; }
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased;
+    @apply min-w-[320px] bg-[#080a12] font-sans text-slate-100 antialiased;
+    background-image: radial-gradient(circle at 12% 4%, rgba(34, 211, 238, .10), transparent 26rem), radial-gradient(circle at 88% 24%, rgba(168, 85, 247, .10), transparent 28rem);
   }
-  html {
-    scroll-behavior: smooth;
-  }
+  ::selection { @apply bg-cyan-300/30 text-white; }
+  section { scroll-margin-top: 5rem; }
+}
+
+@layer components {
+  .site-container { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section-shell { @apply relative py-20 md:py-28; }
+  .eyebrow { @apply mb-3 font-mono text-xs font-medium uppercase tracking-[.22em] text-cyan-300; }
+  .section-title { @apply text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl; }
+  .section-copy { @apply mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400; }
+  .surface { @apply border border-white/[.09] bg-white/[.045] shadow-[0_16px_45px_rgba(0,0,0,.18)] backdrop-blur-xl; }
+  .surface-hover { @apply transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[.07] hover:shadow-[0_22px_55px_rgba(0,0,0,.28)]; }
+  .button-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/15 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#080a12]; }
+  .button-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300; }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-gray-100/80 dark:bg-white/10 backdrop-blur-sm dark:backdrop-blur-md border border-gray-300/50 dark:border-white/20;
-  }
-  
-  .glass-dark {
-    @apply bg-white/95 dark:bg-gray-900/80 backdrop-blur-sm dark:backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50;
-  }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink;
-  }
-  
-  .gradient-border {
-    @apply relative;
-  }
-  
-  .gradient-border::before {
-    content: '';
-    @apply absolute inset-0 rounded-lg bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-75 blur-sm -z-10;
-  }
+  .glass { @apply surface; }
+  .glass-dark { @apply border border-white/10 bg-[#101522]/90 shadow-2xl backdrop-blur-xl; }
+  .text-gradient { @apply bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-400 bg-clip-text text-transparent; }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-900;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-neon-blue to-neon-purple rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply from-neon-purple to-neon-pink;
-}
-
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #080a12; }
+::-webkit-scrollbar-thumb { border: 3px solid #080a12; border-radius: 999px; background: linear-gradient(#22d3ee, #8b5cf6); }

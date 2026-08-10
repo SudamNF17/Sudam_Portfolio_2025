@@ -144,22 +144,21 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="section-shell relative">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Projects</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full" />
+          <p className="eyebrow">Selected work</p>
+          <h2 className="section-title">Things I’ve brought to life.</h2>
+          <p className="section-copy">A selection of real-world applications built with a focus on useful, polished experiences.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={project._id || index}
@@ -168,10 +167,10 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="glass rounded-2xl overflow-hidden cursor-pointer group"
+              className="surface group cursor-pointer overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-2xl hover:shadow-black/30"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img
                   src={getImageSrc(project.image)}
                   alt={project.title}
@@ -185,13 +184,13 @@ const Projects = () => {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                <h3 className="mb-2 text-xl font-bold text-white">{project.title}</h3>
+                <p className="mb-5 line-clamp-2 text-sm leading-6 text-slate-400">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.slice(0, 3).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-neon-blue/20 text-neon-blue text-xs rounded"
+                      className="rounded-md bg-cyan-300/10 px-2 py-1 text-xs text-cyan-300"
                     >
                       {tech}
                     </span>
@@ -209,7 +208,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center space-x-2 text-gray-400 hover:text-neon-blue transition-colors"
+                      className="flex items-center space-x-2 text-slate-400 hover:text-cyan-300 transition-colors"
                     >
                       <FaGithub size={18} />
                       <span className="text-sm">Code</span>
@@ -221,7 +220,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => handleDemoClick(e, project)}
-                      className="flex items-center space-x-2 text-gray-400 hover:text-neon-purple transition-colors"
+                      className="flex items-center space-x-2 text-slate-400 hover:text-violet-300 transition-colors"
                     >
                       <FaExternalLinkAlt size={18} />
                       <span className="text-sm">Demo</span>

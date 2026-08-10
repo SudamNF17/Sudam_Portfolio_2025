@@ -239,25 +239,23 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="section-shell relative">
+      <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Experience & Education</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full" />
+          <p className="eyebrow">Learning journey</p>
+          <h2 className="section-title">Experience & education.</h2>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-transparent" />
+            <div className="absolute bottom-0 left-8 top-0 w-px bg-gradient-to-b from-cyan-300 via-violet-500 to-transparent" />
 
             <div className="space-y-8">
               {/* Bachelor of Science - Always First */}
