@@ -163,6 +163,15 @@ const Hero = () => {
                 animate={{ opacity: [0.45, 0.85, 0.45], scale: [0.98, 1.03, 0.98] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               />
+              <motion.div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-5 z-0 rounded-[2.8rem] border border-dashed border-cyan-300/25 md:-inset-7"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+              >
+                <span className="absolute -top-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-cyan-300 shadow-[0_0_18px_5px_rgba(34,211,238,.55)]" />
+                <span className="absolute -bottom-1 left-1/4 h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_16px_4px_rgba(167,139,250,.5)]" />
+              </motion.div>
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 shadow-2xl shadow-black/40">
                 <img
                   src={profileImg}
