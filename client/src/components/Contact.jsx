@@ -38,6 +38,8 @@ const Contact = () => {
       
       if (error.response?.data?.message) {
         errorMessage = error.response.data.message;
+      } else if (error.response?.data?.errors?.[0]?.msg) {
+        errorMessage = error.response.data.errors[0].msg;
       } else if (error.message) {
         errorMessage = error.message;
       } else if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
@@ -91,6 +93,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    maxLength={100}
+                    autoComplete="name"
                     className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                     placeholder="Your Name"
                   />
@@ -106,6 +110,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    maxLength={254}
+                    autoComplete="email"
                     className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                     placeholder="your.email@example.com"
                   />
@@ -123,6 +129,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                    maxLength={150}
                   className="w-full rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                   placeholder="What's this about?"
                 />
@@ -138,6 +145,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={5000}
                   rows="6"
                   className="w-full resize-none rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white placeholder:text-slate-600 focus:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-300/20"
                   placeholder="Tell me about your project or just say hello!"

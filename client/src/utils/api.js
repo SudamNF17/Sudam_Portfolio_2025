@@ -71,8 +71,23 @@ export const createProject = (data) => api.post('/projects', data);
 export const updateProject = (id, data) => api.put(`/projects/${id}`, data);
 export const deleteProject = (id) => api.delete(`/projects/${id}`);
 
-// Messages API
-export const createMessage = (data) => api.post('/messages', data);
+// Contact form delivery. FormSubmit sends the submission to the portfolio inbox
+// without requiring Gmail credentials in the application.
+export const createMessage = (data) => axios.post(
+  'https://formsubmit.co/ajax/sudam17fernando@gmail.com',
+  {
+    ...data,
+    _subject: `Portfolio Contact: ${data.subject}`,
+    _template: 'table',
+  },
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    timeout: 30000,
+  }
+);
 export const getMessages = () => api.get('/messages');
 
 // Skills API
