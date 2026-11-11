@@ -14,10 +14,10 @@ export const validateProject = [
 ];
 
 export const validateMessage = [
-  body('name').trim().notEmpty().withMessage('Name is required'),
-  body('email').isEmail().withMessage('Valid email is required'),
-  body('subject').trim().notEmpty().withMessage('Subject is required'),
-  body('message').trim().notEmpty().withMessage('Message is required'),
+  body('name').trim().notEmpty().withMessage('Name is required').isLength({ max: 100 }).withMessage('Name is too long'),
+  body('email').trim().isEmail().withMessage('Valid email is required').normalizeEmail(),
+  body('subject').trim().notEmpty().withMessage('Subject is required').isLength({ max: 150 }).withMessage('Subject is too long'),
+  body('message').trim().notEmpty().withMessage('Message is required').isLength({ max: 5000 }).withMessage('Message is too long'),
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
