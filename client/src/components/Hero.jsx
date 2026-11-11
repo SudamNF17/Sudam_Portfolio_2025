@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaDownload, FaReact } from 'react-icons/fa';
+import { SiJavascript, SiNodedotjs } from 'react-icons/si';
 import Typewriter from './Typewriter';
 import profileImg from '../images/sudam.jpeg';
 
@@ -157,7 +158,11 @@ const Hero = () => {
             className="relative flex justify-center"
           >
             <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-[25rem] lg:w-[25rem]">
-              <div className="absolute -inset-1 rounded-[30px] bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-80 blur-2xl animate-pulse" />
+              <motion.div
+                className="absolute -inset-1 rounded-[30px] bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-80 blur-2xl"
+                animate={{ opacity: [0.45, 0.85, 0.45], scale: [0.98, 1.03, 0.98] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              />
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 shadow-2xl shadow-black/40">
                 <img
                   src={profileImg}
@@ -170,6 +175,39 @@ const Hero = () => {
                   <p className="text-lg font-semibold text-white">Sudam Navoda Fernando</p>
                 </div>
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0, y: [0, -9, 0] }}
+                transition={{ opacity: { delay: 1, duration: 0.5 }, x: { delay: 1, duration: 0.5 }, y: { delay: 1.5, duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
+                whileHover={{ scale: 1.08, rotate: -2 }}
+                className="surface absolute -left-8 top-[18%] z-20 flex items-center gap-3 rounded-2xl px-3 py-2.5 shadow-2xl backdrop-blur-2xl md:-left-14 md:px-4 md:py-3.5"
+              >
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-cyan-400/15 text-cyan-300 md:h-11 md:w-11"><FaReact className="text-xl md:text-2xl" /></span>
+                <span className="text-sm font-bold text-white md:text-base">React</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0, y: [0, 10, 0] }}
+                transition={{ opacity: { delay: 1.2, duration: 0.5 }, x: { delay: 1.2, duration: 0.5 }, y: { delay: 1.7, duration: 4.6, repeat: Infinity, ease: 'easeInOut' } }}
+                whileHover={{ scale: 1.08, rotate: 2 }}
+                className="surface absolute -right-7 top-[42%] z-20 flex items-center gap-3 rounded-2xl px-3 py-2.5 shadow-2xl backdrop-blur-2xl md:-right-14 md:px-4 md:py-3.5"
+              >
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-green-400/15 text-green-300 md:h-11 md:w-11"><SiNodedotjs className="text-xl md:text-2xl" /></span>
+                <span className="text-sm font-bold text-white md:text-base">Node.js</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: [0, -7, 0] }}
+                transition={{ opacity: { delay: 1.4, duration: 0.5 }, y: { delay: 1.9, duration: 4.2, repeat: Infinity, ease: 'easeInOut' } }}
+                whileHover={{ scale: 1.08, rotate: -1 }}
+                className="surface absolute -bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-2xl px-3 py-2.5 shadow-2xl backdrop-blur-2xl md:-bottom-8 md:px-4 md:py-3.5"
+              >
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-yellow-300/15 text-yellow-300 md:h-11 md:w-11"><SiJavascript className="text-xl md:text-2xl" /></span>
+                <span className="text-sm font-bold text-white md:text-base">JavaScript</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
